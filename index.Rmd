@@ -1,0 +1,55 @@
+---
+title       : Coursera - Developing Data Products
+subtitle    : Reproducible Pitch Presentation
+author      : Toby Lam
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : prettify.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Background
+In this project, by using Shiny, we adopted motor trend car toad tests (mtcars) dataset to create a model for predicting Miles Per Gallon (MPG) usage of a car.
+
+The dataset with 32 observations on 11 variables.
+```{r}
+library(datasets)
+head(mtcars)
+dim(mtcars)
+```
+
+--- .class #id 
+
+## Design of the Shiny Application - Frontend
+
+- We created a web form to let the user input three pieces of information: (i) Weight in Pound, (ii) Number of Cylinder, and (iii)Type of Transmission.
+- Once the user pressed the submit button, the data will send to backend.
+
+___
+
+![screenshot](./assets/img/screenshot.jpg)
+
+--- .class #id 
+
+## Design of the Shiny Application - Backend
+
+- In backend, we loaded the dataset, converted the categorical variables into factors and prepared the linear model.
+- The linear model is shown as follows:
+
+$$mpg \sim wt + cyl + am$$
+
+where $mpg$ is miles per gallon, $wt$ is weight in 1000 lb, $cyl$ is number of cylinder and $am$ is the type of transmission (0 - Automatic, 1 - Manual)
+
+--- .class #id 
+
+## Demostration
+
+Shinyapp.io link: 
+https://tobylam.shinyapps.io/devDataProd/
+
+Source code:
+https://github.com/2blam/DevDataProd/tree/master/shinyapp
+
